@@ -5,11 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{09DEED55-B936-4C29-AC45-6844080C025D}"
 	ProjectSection(SolutionItems) = preProject
-		.nuget\NEventStore.Persistence.MongoDB.nuspec = .nuget\NEventStore.Persistence.MongoDB.nuspec
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\nugetPublish.bat = .nuget\nugetPublish.bat
+		.nuget\Webplu-NEventStore.Persistence.MongoDB.5.2.0.nupkg.nuspec = .nuget\Webplu-NEventStore.Persistence.MongoDB.5.2.0.nupkg.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEventStore.Persistence.MongoDB", "NEventStore.Persistence.MongoDB\NEventStore.Persistence.MongoDB.csproj", "{32ADD8CE-0F3F-41D8-BFA1-6E5D685E64DD}"
