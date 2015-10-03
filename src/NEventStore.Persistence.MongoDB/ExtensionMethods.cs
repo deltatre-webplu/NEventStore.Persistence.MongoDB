@@ -40,7 +40,7 @@ namespace NEventStore.Persistence.MongoDB
                     new BsonDocument
                     {
                         {MongoCommitFields.StreamRevision, streamRevision++},
-                        {MongoCommitFields.Payload, BsonDocumentWrapper.Create(typeof (EventMessage), serializer.Serialize(e))}
+                        {MongoCommitFields.Payload, (byte[])serializer.Serialize(e)}
                     });
             var headers = commit.ToBsonDocument();
             return new BsonDocument
@@ -72,9 +72,7 @@ namespace NEventStore.Persistence.MongoDB
 
             List<EventMessage> events = doc[MongoCommitFields.Events]
                 .AsBsonArray
-                .Select(e => e.AsBsonDocument[MongoCommitFields.Payload].IsBsonDocument
-                    ? BsonSerializer.Deserialize<EventMessage>(e.AsBsonDocument[MongoCommitFields.Payload].ToBsonDocument())
-                    : serializer.Deserialize<EventMessage>(e.AsBsonDocument[MongoCommitFields.Payload].AsByteArray))
+                .Select(e => serializer.Deserialize<EventMessage>(e.AsBsonDocument[MongoCommitFields.Payload].AsByteArray))
                 .ToList();
             //int streamRevision = doc[MongoCommitFields.Events].AsBsonArray.Last().AsBsonDocument[MongoCommitFields.StreamRevision].AsInt32;
             int streamRevision = doc[MongoCommitFields.StreamRevisionTo].AsInt32;
