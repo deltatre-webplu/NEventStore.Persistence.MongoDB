@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Webplu-NEventStore.Persistence.MongoDB</id>
-    <version>5.2.1</version>
-    <title>NEventStore MongoDB Persistence Plugin</title>
+    <version>5.2.2</version>
+    <title>WebPlu NEventStore MongoDB Persistence Plugin</title>
     <authors>Deltatre WebPlu + NEventStore Dev Team</authors>
     <owners>Deltatre WebPlu</owners>
-    <projectUrl>http://neventstore.org</projectUrl>
+    <projectUrl>https://github.com/deltatre-webplu/NEventStore.Persistence.MongoDB</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Additional persistence provider for NEventStore using MongoDB.</description>
     <summary>MongoDB persistence provider for NEventStore compiled with MongoDb 2.0.1.</summary>
@@ -17,4 +17,9 @@
       <dependency id="mongocsharpdriver" version="2.0.1" />
     </dependencies>
   </metadata>
+
+	<files>
+		<file src="..\NEventStore.Persistence.MongoDB\bin\release\NEventStore.Persistence.MongoDB.dll" target="lib\net45\" />
+		<file src="..\NEventStore.Persistence.MongoDB\bin\release\NEventStore.Persistence.MongoDB.pdb" target="lib\net45\" />
+	</files>
 </package>
